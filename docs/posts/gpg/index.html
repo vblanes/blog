@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pass y GPG para compartir contraseñas</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #f5f0f0;
+    }
+
+    :root {
+        --accent: blue;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://vblanes.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.91.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Pass y GPG para compartir contraseñas</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="/links">Links</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:viblasel%20@%20gmail.com"><i class="fas fa-envelope"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vblanes/"><i class="fab fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/vicent_bdslab/"><i class="fab fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Pass y GPG para compartir contraseñas</h2>
+        <h5></h5>
+        
+
+    </div>
+
+    <div align="start" class="content"><h1 id="introducción">Introducción</h1>
+<p>Pass (<a href="https://www.passwordstore.org/">https://www.passwordstore.org/</a>) es una utilidad de código libre para la gestión de contraseñas de manera sencilla. Pass sigue la filosofía unix, que es hacer una única cosa de la mejor manera posible. Pass es una utilidad escrita en Bash, el código contiene bashisms y por lo tanto no es compatible con otros shells como zsh, dash o fish, no obstante la inmensa mayoría de las distribuciones linux utilizan bash por defecto. La seguridad de pass utiliza como base el programa GNU Privacy Guard, conocido por su acrónimo GPG. A pesar de que Pass es muy sencillo y está pensado para un uso personal, se puede utilizar para compartir contraseñas en un equipo sin necesidad de usar una contraseña maestra común para todos. De hecho, es el método que utilizamos en mi equipo para la administración de sistemas. La siguiente guía está basada en un <a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592">post de medium</a>, no obstante, por descuido o por estar enfocado a un público más experto, la guía ignora algunos pasos esenciales con GPG antes de poder utilizar Pass.</p>
+<h1 id="construir-un-par-de-claves-públicaprivada-con-gpg">Construir un par de claves pública/privada con GPG</h1>
+<p><em>Referencia:</em> <a href="https://www.gnupg.org/gph/en/manual/c14.html">Manual GNU</a></p>
+<p>La idea de este paso es crear un par de claves, una pública y una privada. GPG requerirá un nombre, un correo (muy importante ponerlo correctamente) y una contraseña. Se pueden modificar las opciones para la creación del keypair, no obstante se recomienda la creación por defecto. Para más detalles sobre el algoritmo utilizado puede consultarse el link en la referencia.</p>
+<p>La contraseña que GPG pide es para encriptar de manera simétrica la clave privada y que no exista como un fichero de texto plano en nuestro sistema. Aunque todavía no hemos llegado a este punto, es importante saber que Pass encriptará nuestras contraseñas con nuestras claves públicas. De esa manera solo se podrán desencriptar con nuestra clave privada, que solo nosotros deberemos conocer.</p>
+<p><img src="/img/posts/gpg/gpg1.webp" alt=""></p>
+<h1 id="compartir--recibir-las-claves-públicas-del-resto-de-miembros-del-equipo">Compartir / Recibir las claves públicas del resto de miembros del equipo</h1>
+<p>Para que las contraseñas que creemos puedan ser desencriptadas por otra gente necesitamos su clave pública. GPG ofrece ambas opciones de exportar e importar de manera sencilla.</p>
+<p><img src="/img/posts/gpg/gpg2.webp" alt=""></p>
+<p><strong>NOTA: Los cuadrados blancos tapan datos personales, en la ejecución normal aparecerá el nombre y correo de la persona propietaria de la clave</strong></p>
+<p>Acto seguido enviaremos este fichero a nuestros colaboradores. Ellos tendrán que importar la clave y firmarla.</p>
+<p><img src="/img/posts/gpg/gpg3.webp" alt=""></p>
+<p>El proceso de firma se ilustra con la siguiente imagen. Es muy importante comprobar que el fingerprint coincide con el proporcionado. Con el comando <code>gpg --list-keys –fingerprint</code>.</p>
+<p>Podemos consultar todos los fingerprints de las claves públicas almacenadas, incluida la nuestra, y trasmitirlo a nuestros colaboradores.</p>
+<p><img src="/img/posts/gpg/gpg4.webp" alt=""></p>
+<h1 id="crear-el-almacenamiento-de-contraseñas">Crear el almacenamiento de contraseñas</h1>
+<p>Antes de empezar a usar pass, es importa señalar dos aspectos fundamentales de su funcionamiento:</p>
+<ol>
+<li>
+<p>La idea detrás de pass es guardar cada contraseña en un fichero de texto encriptado, cuyo nombre es la entidad o sitio web al que pertenece. Esto hace posible compartir contraseñas enviando simplemente los ficheros.</p>
+</li>
+<li>
+<p>pass tiene buena integración con git, lo que permite mantener nuestras contraseñas en un repositorio remoto, esto tiene muchas ventajas como por ejemplo mantenerlas si el sistema queda inaccesible o compartirlas y sincronizarlas de manera muy fácil con nuestros colaboradores. Esta segunda opción será la que escojamos.</p>
+</li>
+</ol>
+<p>El comando <code>pass init correo_public_key</code> inicializa el repositorio de contraseñas en una carpeta oculta (empieza por punto) en nuestro directorio home, con opciones extra esta carpeta se puede colocar en cualquier otro path.</p>
+<p><img src="/img/posts/gpg/gpg5.webp#smallfigure" alt=""></p>
+<p>Junto con esta carpeta se nos habrá creado un fichero llamado .gpg-id, este fichero sirve para indicar que claves públicas, usando su correo, se utilizan para encriptar las contraseñas.</p>
+<p><img src="/img/posts/gpg/gpg6.webp#smallfigure" alt=""></p>
+<p>Es importante destacar que .password-store también acepta la creación de subcarpetas, y cada una de estas carpetas tiene su .gpg-id independiente, de modo que podemos utilizar una de estas subcarpetas como “carpeta compartida” con nuestros colaboradores.</p>
+<h1 id="carpeta-compartida">Carpeta compartida</h1>
+<p><img src="/img/posts/gpg/gpg7.webp#smallfigure" alt=""></p>
+<p>En este caso se ha creado la carpeta acme, que aparece al hacer ls junto con la que ya tenía creada de antemano. Esta carpeta tiene en su interior el fichero .gpg-id. De haber utilizado el comando: <code>git init –p nombre_carpeta correo</code> pass hubiera creado lo mismo, más un repositorio git en el interior. Este repositorio se puede crear a posteriori produciendo exactamente el mismo resultado.</p>
+<h1 id="crear-contraseña">Crear contraseña</h1>
+<p>Podemos empezar a añadir contraseñas, podemos usar nuestra carpeta raiz (.password_store) o nuestra subcarpeta compartida mediante el comando <code>pass insert</code>.</p>
+<p><img src="/img/posts/gpg/gpg8.webp#smallfigure" alt=""></p>
+<p>También existe la opción de generar una contraseña aleatoria de N digitos con <code>pass generate</code>.</p>
+<p><img src="/img/posts/gpg/gpg9.webp" alt=""></p>
+<h1 id="añadir-colaboradores-y-re-encriptar">Añadir colaboradores y re-encriptar</h1>
+<p>Para ello únicamente tenemos que abrir el fichero .gpg-id con nuestro editor favorito y añadir los correos de nuestros colaboradores, uno por linea.</p>
+<p><img src="/img/posts/gpg/gpg10.webp" alt=""></p>
+<p>Cuando se realizan cambios en el fichero .gpg-id de la carpeta a compartir, es necesario ejecutar la siguiente orden para reencriptar los ficheros con las diferentes claves.</p>
+<p><img src="/img/posts/gpg/gpg11.webp" alt=""></p>
+<p>El comando entre $() simplemente muestra el contenido del fichero donde están los correos de los colaboradores para que el comando pass init –p lo utilice como argumento.</p>
+<h1 id="otros-comandos">Otros comandos</h1>
+<p>Además de insert y generate pass tiene otros comandos para editar, borrar, buscar, mostrar, copiar y mover contraseñas. Todos estos comandos se pueden consultar en el manual (man pass)</p>
+<p><img src="/img/posts/gpg/gpg12.webp" alt=""></p>
+<h1 id="otras-consideraciones">Otras consideraciones</h1>
+<p>Pass es un programa libre, util y muy sencillo, que permite compartir y guardar nuestras contraseñas en simples ficheros de texto encriptados. Este funcionamiento hace que tenga una infinidad de ventajas respecto a sus competidores, como la transparencia en el manejo de contraseñas, mantener la información en tus sistemas, la mínima instalación, la facilidad para compartir, etc&hellip;</p>
+<p>No obstante, el planteamiento tiene puntos débiles o puntos que requieren un cuidado especial que quizás en otro tipo de software no se necesitarían:</p>
+<ul>
+<li>
+<p>Cada usuario tiene que hacerse cargo de su clave privada y tener un backup por si su sistema fallara poder recuperarla</p>
+</li>
+<li>
+<p>Pass no tiene multiusuario, de modo que todos los usuarios verían todas las contraseñas. Esto puede mitigarse creando diversas subcarpetas con distintos usuarios simulando grupos de permisos.</p>
+</li>
+<li>
+<p>Aunque pass se encarga de crear un commit cada vez que se produce un cambio en una carpeta que contiene un repositorio, es importante hacer un push en repositorios compartidos, de la misma manera que se necesota hacer un pull para estar al día. Hay que hacerlo manualmente o con un script</p>
+</li>
+</ul>
+</div>
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

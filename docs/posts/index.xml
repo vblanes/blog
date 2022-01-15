@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on S.S. Aleph</title>
+    <link>https://vblanes.github.io/posts/</link>
+    <description>Recent content in Posts on S.S. Aleph</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 24 Apr 2021 20:20:07 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pass y GPG para compartir contraseñas</title>
+      <link>https://vblanes.github.io/posts/gpg/</link>
+      <pubDate>Sat, 24 Apr 2021 20:20:07 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/gpg/</guid>
+      <description>Introducción Pass (https://www.passwordstore.org/) es una utilidad de código libre para la gestión de contraseñas de manera sencilla. Pass sigue la filosofía unix, que es hacer una única cosa de la mejor manera posible. Pass es una utilidad escrita en Bash, el código contiene bashisms y por lo tanto no es compatible con otros shells como zsh, dash o fish, no obstante la inmensa mayoría de las distribuciones linux utilizan bash por defecto.</description>
+    </item>
+    
+    <item>
+      <title>Creación de formularios dinámicos en Django</title>
+      <link>https://vblanes.github.io/posts/dynamicform/</link>
+      <pubDate>Sat, 17 Apr 2021 18:25:38 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/dynamicform/</guid>
+      <description>Introducción Quise escribir esta entrada sobre como crear formularios dinámicos por ser un problema que yo mismo he encontrado mientras trabajaba en una webapp. Esta webapp debía tener un formulario para introducir ~30 variables clínicas y proporcionar predicciones por tres modelos distintos (Referencia: Nuestro preprint). El principal problema es que la selección de variables para cada modelo no estaba determinada, por tanto no podía confiar en tener siempre las mismas variables.</description>
+    </item>
+    
+  </channel>
+</rss>
