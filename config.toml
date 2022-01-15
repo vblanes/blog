@@ -1,4 +1,4 @@
-baseURL = "https://vblanes.github.io/blog"
+baseURL = "https://vblanes.github.io/"
 languageCode = "es"
 title = "S.S. Aleph"
 theme = "minimal"
