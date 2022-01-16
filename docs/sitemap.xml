@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://vblanes.github.io/posts/hugo/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/posts/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
     <loc>https://vblanes.github.io/~issou/</loc>
     <lastmod>2022-01-15T20:42:35+01:00</lastmod>
   </url><url>
@@ -12,12 +21,6 @@
     <lastmod>2022-01-15T18:39:59+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/posts/gpg/</loc>
-    <lastmod>2021-04-24T20:20:07+01:00</lastmod>
-  </url><url>
-    <loc>https://vblanes.github.io/posts/</loc>
-    <lastmod>2021-04-24T20:20:07+01:00</lastmod>
-  </url><url>
-    <loc>https://vblanes.github.io/</loc>
     <lastmod>2021-04-24T20:20:07+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/posts/dynamicform/</loc>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Migración del blog a Hugo y como publicarlo en github pages</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #f5f0f0;
+    }
+
+    :root {
+        --accent: blue;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://vblanes.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.91.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Migración del blog a Hugo y como publicarlo en github pages</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="/links">Links</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:viblasel%20@%20gmail.com"><i class="fas fa-envelope"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vblanes/"><i class="fab fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/vicent_bdslab/"><i class="fab fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Migración del blog a Hugo y como publicarlo en github pages</h2>
+        <h5></h5>
+        
+
+    </div>
+
+    <div align="start" class="content"><h1 id="introdución">Introdución</h1>
+<p>En este post voy a cubrir mi expericia utilizando Hugo (<a href="https://gohugo.io/">https://gohugo.io/</a>) y a incluir los pasos básicos para crear un sitio web y publicarlo en Github pages. Hugo es un framework para creación de páginas de web estáticas. Es decir, de entrada parece una opción genial para crear un blog. Yo lo conocía desde hacía tiempo, pero no sabía si valía la pena aprender a utilizarlo hasta que vi que Jacob Kaplan-Moss, uno de los creadors del framework web Django, lo utilizaba para su propio blog (<a href="https://jacobian.org/)">https://jacobian.org/)</a>.</p>
+<p>Siempre quise tener un blog donde hablar sobre tecnología, tutoriales y trucos pero nunca me habían convencido los blogs basados en wordpress, siempre pensé que siendo yo programador, e ingeniero informático, lo más <strong>cool</strong> era que me hiciera mi propio blog y lo auto-hosteara. Mi primer instinto fue crear utilizando Django, principalmente porque la única herramienta de trabajo que he manejado para hacer programación web, pero a los tres primeros minutos de tener esta idea uno se da cuenta de que un framework tan grande y que incluye tantas cosas no es adecuado para un blog con muy pocas funcionalidades, que podría ser perfectamente un sitio web estático.</p>
+<p>La segunda versión del blog era un compendio de ficheros html y la librería bootstrap para la maquetación de las páginas. Su simplicidad me gustaba mucho, ya que no usaba más recursos de los que necesitaba y me permitía una flexibilidad absoluta. No obstante habían algunos inconvenientes. La primera cosa que me molestaba era que si quería mantener una barra superior común a todas las páginas, debía incorportar el mismo trozo de html una y otra vez. Otra de las cosas que se me hacían muy pesadas era la maquetación de las páginas, perdía mucho tiempo picando las étiquetas para maquetar, que si <code>&lt;p&gt;</code>, que si <code>&lt;b&gt;</code>, ahora una <code>&lt;table&gt;</code>. Es por eso que decidí probar Hugo migrando el poco contenido que sí tenía el blog.</p>
+<p><strong>DISCLAIRMER</strong>: <strong>No soy experto en Hugo, de hecho todavía estoy empezando a usarlo, no obstante para mi ha sido tan sencillo montar un blog sencillo y con buena pinta que no puedo resistirme a recomendarlo. Y bueno, escribir posts utilizando markdown en lugar de html <strong>muchísimo</strong> más rápido (y más satisfactorio)</strong></p>
+<h1 id="tutorial">Tutorial</h1>
+<p>Odio <strong>muchísimo</strong> cuando buscas algo sobre una tecnología y solo encuentras el mismo tutorial básico una y otra vez. Y sí, yo también lo estoy haciendo aquí, no obstante diré en mi defensa que este está en castellano (jeje) y además aprovecharé para comentar algunas consideraciónes y explicar que <del>carajo</del> hace cada uno de los comandos.</p>
+<h2 id="instalación">Instalación</h2>
+<p>Hugo puede instalarse a través de la terminal, usando el systema de paquetes, en cualquier distribución linux. En mi caso que utilizo manjaro sería algo como <code>sudo pacman -Sy hugo</code>. Con Ubuntu u otros sistemas basados en debian debería ser <code>sudo apt install hugo</code>. Para más información en otras plataformas consultado el tutorial oficial: <a href="https://gohugo.io/getting-started/quick-start/#step-1-install-hugo">https://gohugo.io/getting-started/quick-start/#step-1-install-hugo</a>.</p>
+<h2 id="creación-del-sitio">Creación del sitio</h2>
+<p>El primer paso es colocarse en la carpeta donde uno quiere crear su proyecto, en mi caso, tengo los proyectos personales en una carpeta llamada &ldquo;projects&rdquo;, que cuelga de mi home, así que en una terminal recien abierta haré <code>cd projects</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site misitio
+</code></pre></div><p>Básicamente llamamos al programa <code>hugo</code> y con el comando <code>new</code> le indicamos que queremos un elemento nuevo, que ente caso es un sitio web <code>site</code> y por último, el argumento será el <strong>nombre</strong> que queramos ponerle a nuestro proyecto. Veremos que una carpeta con el nombre del proyecto ha aparecido, y nos vomemos a su interior. El contenido de la carpeta de proyecto será algo similar a esto:</p>
+<p><img src="/img/posts/hugo/raiz.webp" alt="Imagen de la raíz"></p>
+<p>Y nos referiremos a esta carpeta como <strong>raíz</strong>&hellip;</p>
+<h2 id="instalar-un-tema">Instalar un tema</h2>
+<p>El primer paso para añadir contenido en nuestra página es seleccionar un tema. Un tema no es más que un conjunto de ficheros que configuran Hugo para que la página web que sea generada al final del proceso tengo un aspecto concreto. El mismo concepto que una plantilla de wordpress. La página de Hugo ofrece una lista de entre los que elegir: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>. Estoy seguro de que existen muchos más que no están indexados en la página oficial. También está la opción de crear tu propio tema si tienes el tiempo y los conocimientos necesarios&hellip; ¯\_(ツ)_/¯. Para este blog no quería complicarme mucho y elegí la plantilla &ldquo;minimal&rdquo;.</p>
+<p>El primer paso es iniciar un repositorio git en nuestra carpeta mediante el comando <code>git init</code>. Además de permitirnos mantener el control de versiones de nuestro blog será <strong>necesario</strong> para colgar nuestro blog en github pagers. Una vez hecho esto, debemos descargar la plantilla del github del creador, pero hay que añadirla como un módulo git separado, esto es para mantener la independencia entre el código del creador de la plantilla y nuestro proyecto, ya que no tiene mucho sentido replicar sus ficheros en nuestro proyecto. Para ello ejecutamos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/calintat/minimal.git themes/minimal
+git submodule init
+git submodule update
+</code></pre></div><p>Estos comandos clonan los contenidos del repositorio en el interior de la carpeta <strong>themes</strong> y buscan actualizaciones. Una vez hecho esto iremos a la carpeta del tema y copiaremos el fichero <strong>config.toml</strong> en la carpeta <strong>raíz</strong>. Podemos hacerlo desde la consola utilizando el comando: <code>cp themes/minimal/exampleSite/config.toml . </code></p>
+<p><strong>Importante:</strong> Este fichero debe sustituir el que existia en la raíz con el mismo nombre.</p>
+<p><strong>Importante:</strong> Se recomienda añadir un fichero <strong>.gitignore</strong> tal cual se crea el repositorio en la raíz, para no incluir ficheros indeseados al repositorio de github, mi sugerencia: <a href="https://www.toptal.com/developers/gitignore/api/hugo">https://www.toptal.com/developers/gitignore/api/hugo</a></p>
+<h2 id="editar-el-fichero-configtoml">Editar el fichero config.toml</h2>
+<p>Debemos editar el fichero de configuración, en el que añadiremos el nombre de nuestro blog, el subtítulo, nuestro nombre y algunos detalles más como en este caso los elementos que aparecen en la barra superior del blog.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://vblanes.github.io/&#34;</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;es&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;S.S. Aleph&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;minimal&#34;</span>
+<span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span>
+
+[<span style="color:#a6e22e">params</span>]
+    <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Vicent Blanes&#34;</span>
+    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;Programación, Ciencia y Linux&#34;</span>
+    <span style="color:#a6e22e">githubUsername</span> = <span style="color:#e6db74">&#34;vblanes&#34;</span>
+    <span style="color:#a6e22e">accent</span> = <span style="color:#e6db74">&#34;blue&#34;</span>
+    <span style="color:#a6e22e">showBorder</span> = <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">backgroundColor</span> = <span style="color:#e6db74">&#34;#f5f0f0&#34;</span>
+    <span style="color:#a6e22e">font</span> = <span style="color:#e6db74">&#34;Raleway&#34;</span> <span style="color:#75715e"># should match the name on Google Fonts!</span>
+    <span style="color:#a6e22e">highlight</span> = <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">highlightStyle</span> = <span style="color:#e6db74">&#34;default&#34;</span>
+    <span style="color:#a6e22e">highlightLanguages</span> = [<span style="color:#e6db74">&#34;go&#34;</span>, <span style="color:#e6db74">&#34;haskell&#34;</span>, <span style="color:#e6db74">&#34;kotlin&#34;</span>, <span style="color:#e6db74">&#34;scala&#34;</span>, <span style="color:#e6db74">&#34;swift&#34;</span>, <span style="color:#e6db74">&#34;python&#34;</span>]
+</code></pre></div><p>De este trozo de fichero cabe destacar varias cosas:</p>
+<ol>
+<li>Utilizamos como baseURL, la dirección que tendrá nuestra github page, si en este paso no estamos seguros siempre podemos modificarlo después.</li>
+<li>Deberemos el parametro <code>publishDir = &quot;docs&quot;</code> para que posteriormente el blog funcione en github pages.</li>
+<li>He cambiado minimamemte algunas cosas, como el color del accento que era rojo de base, o el color del fondo, que he cambiado de &ldquo;white&rdquo; a una tonalidad más crudo.</li>
+</ol>
+<p>En la segunda parte del fichero unicamente edité los campos para poner mis redes y customicé ligeramente las secciones por defecto</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Home&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">1</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;About&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">2</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/posts/&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Posts&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/links&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Links&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">4</span>
+
+<span style="color:#75715e"># Social icons to be shown on the right-hand side of the navigation bar.</span>
+<span style="color:#75715e"># The &#34;name&#34; field should match the name of the icon in Font Awesome.</span>
+<span style="color:#75715e"># The list of available icons can be found at http://fontawesome.io/icons.</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icon</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;mailto:viblasel @ gmail.com&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;fas fa-envelope&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">1</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icon</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/vblanes/&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;fab fa-github&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">2</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icon</span>]]
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://twitter.com/vicent_bdslab/&#34;</span>
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;fab fa-twitter&#34;</span>
+    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
+
+</code></pre></div><h2 id="añadir-contenido">Añadir contenido</h2>
+<p>Para crear un post, o realmente cualquier otra página como la de <strong>about</strong>, podemos utilizar el comando <code>hugo new posts/mipost.md</code> o <code>hugo new about.md</code>. Este comando se limita a crear un fichero markdown con un poco de metainformación en la parte superior. Todos los contenidos de hugo son creado en las carpeta <strong>content</strong> que se encuentra en <strong>la raíz</strong>.</p>
+<p>A partir de aquí nos pondremos a escribir el contenido que deseemos utilizando la sintaxis de markdown, por ejemplo, la página de about está escrita de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">---
+title: &#34;About&#34;
+date: 2022-01-15T18:39:59+01:00
+draft: true
+---
+
+# Vicent Blanes-Selva
+
+Estudiante de doctorando en tecnologías de la salud y el bienestar en la Universitat Politècnica de València, especializado en Machine Learning aplicado a medicina y programador, sobretodo programador.
+
+Mi linea de investigación versa sobre la construcción de sistemas de ayuda a la decisión (CDSS), en el ámbito médico, sobretodo con el foco sobre los cuidados paliativos y la detección precoz de pacientes con necesidad de estos.
+
+Puedes enviarme un correo utilizando el icono de la barra superior. 🇬🇧🇺🇸 <span style="font-weight:bold">**This website is meant to be in Spanish, but you can contact me in English too**</span>
+
+![<span style="color:#f92672">A picture of me!</span>](<span style="color:#a6e22e">/img/about/me.webp</span>)
+
+# Publicaciones
+
+Estas son algunas de las publicaciones con relación directa a mi linea de investigación
+
+
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">Design of 1-year mortality forecast at hospital admission: A machine learning approach</span>](<span style="color:#a6e22e">https://journals.sagepub.com/doi/full/10.1177/1460458220987580</span>)
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">Responsive and Minimalist App Based on Explainable AI to Assess Palliative Care Needs during Bedside Consultations on Older Patients</span>](<span style="color:#a6e22e">https://www.mdpi.com/2071-1050/13/17/9844</span>)
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">(Congreso) Machine Learning-Based Identification of Obesity from Positive and Unlabelled Electronic Health Records</span>](<span style="color:#a6e22e">https://ebooks.iospress.nl/volumearticle/54286</span>)
+
+
+# Publicaciones como colaborador
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">Deep ensemble multitask classification of emergency medical call incidents combining multimodal data improves emergency medical dispatch</span>](<span style="color:#a6e22e">https://www.sciencedirect.com/science/article/pii/S0933365721000816</span>)
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">A User-Centered Chatbot (Wakamola) to Collect Linked Data in Population Networks to Support Studies of Overweight and Obesity Causes: Design and Pilot Study</span>](<span style="color:#a6e22e">https://medinform.jmir.org/2021/4/e17503</span>)
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">How the Wakamola chatbot studied a university community’s lifestyle during the COVID-19 confinement</span>](<span style="color:#a6e22e">https://journals.sagepub.com/doi/full/10.1177/14604582211017944</span>)
+<span style="color:#66d9ef">*</span> [<span style="color:#f92672">A user-centered chatbot to identify and interconnect individual, social and environmental risk factors related to overweight and obesity</span>](<span style="color:#a6e22e">https://www.tandfonline.com/doi/abs/10.1080/17538157.2021.1923501</span>)
+</code></pre></div><p>Hay títulos con #, hay negritras rodeando el texto de doble asterisco (*), hay una imagen utilizando la contrucción <code>![texto alternativo](link_imagen)</code>. Y hay diversion enlaces, creados de manera muy similar a las imágenes <code>[Texto del enlace](enlace)</code>. Las imágenes están alojadas en la carpeta static, donde tengo una subcarpeta llamada <strong>img</strong> y luego, dentro de esta, una subcarpeta para cada publicación. Es mi manera de organizar las cosas, el blog seguiria funcionando aunque estuvieran todas las imágenes directamente en <strong>/static</strong> (solo cambiaría su ruta para incluirlas).</p>
+<p><img src="/img/posts/hugo/static.webp" alt="captura de static"></p>
+<h3 id="un-poco-más-avanzado">Un poco más avanzado</h3>
+<p>La forma presentada de colocar imágenes es la más basica, aunque creo que serivará al 99% de la gente que quiera crear su blog, ya que con las conexiones modernas a duras penas existen problemas de rendimiento en páginas estáticas. No obstante, en la página oficial de Hugo y como parte de sus tutorial enseñan como procesar y editar las imágenes de manera más eficiente (<a href="https://gohugo.io/content-management/image-processing/)">https://gohugo.io/content-management/image-processing/)</a>. Mi única medida a este respecto es transforma las imágenes al formato webp, que es mucho más liviano.</p>
+<h2 id="servidor-local">Servidor local</h2>
+<p>Podemos poner en marcha el servidor de Hugo para ver nuestra web en local, para ello utilizamos el comando <code>hugo server -D</code>. Mientras el servidor este en marcha, podemos editar nuestro blog y los cambios serán recargados en el momento. Es una herramienta muy buena para ir viendo como van quedando nuestros posts a medidas que los escribimos.</p>
+<p>Si utilizamos el comando <code>hugo -D</code> exportamos los ficheros html a la carpeta <strong>public</strong> de la raíz, es por ello que normalmente esta carpeta suele incluirse en el fichero .gitignore.</p>
+<h2 id="colocar-nuestra-páginablog-en-github-pages">Colocar nuestra página/blog en github pages</h2>
+<p>Fuente: <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
+<p>Antes de empezar, necesitamos tener una cuenta en github. Si no la tienes, háztela, venga te espero. Ahora necesitamos tener nuestro nustros ficheros en un repositorio. Un detalle muy importante es que, las github pages tienen el siguiente esquema: <code>&lt;nombre de usuario&gt;.github.io/&lt;nombre del repositorio&gt;</code>, es decir, que si mi nombre de usuario es vblanes y mi repositorio con el blog en hugo se llama &ldquo;blog&rdquo;, la url base sería <strong>vblanes.github.io/blog/</strong>. Si has prestado atención, verás que la url base de la página que estás viendo no tiene el nombre del blog. Esto se consigue cuando el nombre de tu repositorio es <code>&lt;nombre de usuario&gt;.github.io</code> o en mi caso <strong>vblanes.github.io</strong>, mira, échale un vistazo: <a href="https://github.com/vblanes/vblanes.github.io">link al repositorio de este blog</a>.</p>
+<p>Una vez tengamos nuestro código en su repositorio de github, tengamos claro el nombre de este repositorio y por tanto su url base, debemos acordarnos de modificar el parámetro <strong>baseURL</strong> que mencionamos hace algunos apartados. Por último, solo necesitaríamos añadir un fichero a nuestro proyecto, que le dirá a github que con cada push que hagamos, queremos que reconstruya el blog y depsliegue nuestro blog con la última versión.</p>
+<p>Para ello debemos crear una carpeta llamada <strong>.github</strong> en la raíz de nuestro proyecto, y asimismo dentro de esta, una carpeta llamada workflows. Dentro de esta última carpeta añadiremos un fichero yaml, cuyo nombre no importa demasiado pero que yo he llamado <strong>gh-pages.yml</strong>, con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">github pages</span>
+
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+      - <span style="color:#ae81ff">main </span> <span style="color:#75715e"># Set a branch to deploy</span>
+  <span style="color:#f92672">pull_request</span>:
+
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">deploy</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-20.04</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># Fetch Hugo themes (true OR recursive)</span>
+          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>    <span style="color:#75715e"># Fetch all history for .GitInfo and .Lastmod</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">hugo-version</span>: <span style="color:#e6db74">&#39;latest&#39;</span>
+          <span style="color:#75715e"># extended: true</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo --minify</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v3</span>
+        <span style="color:#f92672">if</span>: <span style="color:#ae81ff">github.ref == &#39;refs/heads/main&#39;</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">github_token</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+          <span style="color:#f92672">publish_dir</span>: <span style="color:#ae81ff">./public</span>
+</code></pre></div><p>Solo falta un detalle para que esto funciona, y es que debemos tener un token personal para acceder a github. Desde hace unos meses es obligatorio, pero si no lo tienes puedes mirar como conseguir uno en el siguiente enlace: <a href="https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a>. Debemos accerder a nuestro repositorio y en <strong>Settings &gt; Secrets</strong> lo añadiremos, en mi caso lo he añadido bajo el nombre <strong>ACTIONS_DEPLOY_KEY</strong> y se utiliza en la penúltima linea del fichero que acabamos de crear.</p>
+<p>Con todo esto solo cabe asegurar de que la configuración de las github pages es correcta, esto se puede consultar en <strong>Settings &gt; Pages</strong>. Donde deberíais tener algo similar a:</p>
+<p><img src="/img/posts/hugo/githubpages.webp" alt="captura de las pages"></p>
+<p>Ahora solo quedaría commit y push de nuestros cambios, y se iniciará la acción para el despliegue que en pocos segundos hará que nuestro blog esté visible. <strong>Voilá</strong>.</p>
+<h1 id="problemas-pendientes">Problemas pendientes</h1>
+<p>A pesar de que poner la parte básica en funcionamiento ha sido relativamente fácil, tengo todavía algunos problemillas que no he sabido como solucionar en Hugo y que dejo aquí a continuación para editarlos cuando encuentre una solución (o si alguien me lee y sabe la respuesta 👀)</p>
+<ol>
+<li>
+<p>No sé como poner contenido en dos columnas. En el blog anterior tenía en mi sección de about dos columnas, en una estaba mi fotografía y en la otra mi descripción. En este momento no sé como se puede cambiar esa maquetación, aunque es cuestión de tiempo que lea más y vaya entiendo mejor todo el stack. <strong>Estúpida y sensual web, como te odio</strong>.</p>
+</li>
+<li>
+<p>En Firefox los bloques de código aparecen centrados y mal identidas, al contrario que chromium. Además el esquema de colores para algunos lenguajes es <strong>fatal</strong>. Entiendo que para ello deberé editar los CSS del tema, pero no he tenido tanto tiempo&hellip; todavía.</p>
+</li>
+</ol>
+</div>
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

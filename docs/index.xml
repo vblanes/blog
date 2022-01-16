@@ -6,7 +6,16 @@
     <description>Recent content on S.S. Aleph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sat, 24 Apr 2021 20:20:07 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 17:08:44 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migración del blog a Hugo y como publicarlo en github pages</title>
+      <link>https://vblanes.github.io/posts/hugo/</link>
+      <pubDate>Sun, 16 Jan 2022 17:08:44 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/hugo/</guid>
+      <description>Introdución En este post voy a cubrir mi expericia utilizando Hugo (https://gohugo.io/) y a incluir los pasos básicos para crear un sitio web y publicarlo en Github pages. Hugo es un framework para creación de páginas de web estáticas. Es decir, de entrada parece una opción genial para crear un blog. Yo lo conocía desde hacía tiempo, pero no sabía si valía la pena aprender a utilizarlo hasta que vi que Jacob Kaplan-Moss, uno de los creadors del framework web Django, lo utilizaba para su propio blog (https://jacobian.</description>
+    </item>
+    
     <item>
       <title>Risitas</title>
       <link>https://vblanes.github.io/~issou/</link>
@@ -17,12 +26,13 @@
     </item>
     
     <item>
-      <title>Links</title>
+      <title>Interesting Links</title>
       <link>https://vblanes.github.io/links/</link>
       <pubDate>Sat, 15 Jan 2022 20:42:25 +0100</pubDate>
       
       <guid>https://vblanes.github.io/links/</guid>
-      <description></description>
+      <description>Aquí voy a incluir diferents enlaces a otros blogs o páginas webs que me parecen interesantes. La mayoría son en inglés.
+ Sqlite is not a toy database Ethical anti-design  </description>
     </item>
     
     <item>
