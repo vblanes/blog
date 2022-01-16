@@ -1,4 +1,4 @@
 hugo -D
 git add -A
-git commit -m "autopush script"
+git commit -m "$1"
 git push

@@ -241,3 +241,12 @@ A pesar de que poner la parte básica en funcionamiento ha sido relativamente f�
 1. No sé como poner contenido en dos columnas. En el blog anterior tenía en mi sección de about dos columnas, en una estaba mi fotografía y en la otra mi descripción. En este momento no sé como se puede cambiar esa maquetación, aunque es cuestión de tiempo que lea más y vaya entiendo mejor todo el stack. **Estúpida y sensual web, como te odio**.
 
 2. En Firefox los bloques de código aparecen centrados y mal identidas, al contrario que chromium. Además el esquema de colores para algunos lenguajes es **fatal**. Entiendo que para ello deberé editar los CSS del tema, pero no he tenido tanto tiempo... todavía.
+
+    * EDITADO: Junto al problema original, resulta que los texto de todas las entradas también aparecen centrados en Firefox. Esto se debe a la propiedad align que está en toda la etiqueta **main**, perece que por algún motivo en navegadores tipo chromium se renderiza como left mientras que en Firefox como center. La solución es añadir esta segunda linea de CSS al fichero **main.css** del tema.
+
+    ```css
+    .content {
+        padding-top: 20px;
+        text-align: left;
+    }
+    ```
