@@ -231,7 +231,7 @@ Con todo esto solo cabe asegurar de que la configuración de las github pages es
 
 ![captura de las pages](/img/posts/hugo/githubpages.webp)
 
-Ahora solo quedaría commit y push de nuestros cambios, y se iniciará la acción para el despliegue que en pocos segundos hará que nuestro blog esté visible. **Voilá**.
+Ahora solo quedaría utilizar el comando ```hugo -D``` para generar nuestro sitio, y hacer commit y push de nuestros cambios, y se iniciará la acción para el despliegue que en pocos segundos hará que nuestro blog esté visible. **Voilá**.
 
 
 # Problemas pendientes
