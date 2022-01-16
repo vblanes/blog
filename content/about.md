@@ -10,7 +10,7 @@ Estudiante de doctorando en tecnologías de la salud y el bienestar en la Univer
 
 Mi linea de investigación versa sobre la construcción de sistemas de ayuda a la decisión (CDSS), en el ámbito médico, sobretodo con el foco sobre los cuidados paliativos y la detección precoz de pacientes con necesidad de estos.
 
-Puedes enviarme un correo utilizando el icono de la barra superior. 🇬🇧🇺🇸 This website is meant to be in Spanish, but you can contact me in English too
+Puedes enviarme un correo utilizando el icono de la barra superior. 🇬🇧🇺🇸 **This website is meant to be in Spanish, but you can contact me in English too**
 
 ![A picture of me!](/img/about/me.webp)
 
