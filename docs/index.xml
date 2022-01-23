@@ -6,7 +6,16 @@
     <description>Recent content on S.S. Aleph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 16 Jan 2022 17:08:44 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jan 2022 20:54:51 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain no vale para nada</title>
+      <link>https://vblanes.github.io/posts/blockchainbad/</link>
+      <pubDate>Fri, 21 Jan 2022 20:54:51 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/blockchainbad/</guid>
+      <description>Introducción Llevo un rato pensando en como responder a este tuit que me ha envíado uno de mis amigos. He pensado en conectarme a mi cuenta de tuiter profesional y citar el tuit diciendo que es una estafa, he pensado en hacerlo desde mi cuenta caótica del día a día. Al final creo que lo más constructivo será que analicemos porque este tuit y el artículo que enlaza no son más que un conjunto de buzzwords provenientes de una gente que no tiene ni idea y que solo quiere ganar visibilidad y como además esto nos da pistas de una verdad un poco más incómoda y es que&amp;hellip; BLOCKCHAIN NO VALE PARA NADA.</description>
+    </item>
+    
     <item>
       <title>Migración del blog a Hugo y como publicarlo en github pages</title>
       <link>https://vblanes.github.io/posts/hugo/</link>
@@ -31,8 +40,8 @@
       <pubDate>Sat, 15 Jan 2022 20:42:25 +0100</pubDate>
       
       <guid>https://vblanes.github.io/links/</guid>
-      <description>Aquí voy a incluir diferents enlaces a otros blogs o páginas webs que me parecen interesantes. La mayoría son en inglés.
- Sqlite is not a toy database Ethical anti-design  </description>
+      <description>Aquí voy a incluir diferents enlaces a otros blogs o páginas webs que me parecen interesantes. La mayoría son en inglés. Mis enlaces personales se encuentran en la barra de navegación :)
+Programación  Sqlite is not a toy database Strict Python function parameters  Otros  Ethical anti-design The Revenge of the Hot Water Bottle  </description>
     </item>
     
     <item>

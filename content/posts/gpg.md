@@ -2,6 +2,7 @@
 title: "Pass y GPG para compartir contraseñas"
 date: 2021-04-24T20:20:07+01:00
 draft: true
+tags: ['gpg', 'passwords', 'contraseñas']
 ---
 
 # Introducción

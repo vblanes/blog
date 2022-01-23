@@ -2,6 +2,7 @@
 title: "Creación de formularios dinámicos en Django"
 date: 2021-04-17T18:25:38+01:00
 draft: true
+tags: ['django', 'forms']
 ---
 
 # Introducción

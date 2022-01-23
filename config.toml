@@ -8,7 +8,7 @@ publishDir = "docs"
     author = "Vicent Blanes"
     description = "Programación, Ciencia y Linux"
     githubUsername = "vblanes"
-    accent = "blue"
+    accent = "#007fff"
     showBorder = true
     backgroundColor = "#f5f0f0"
     font = "Raleway" # should match the name on Google Fonts!
@@ -54,3 +54,7 @@ publishDir = "docs"
     url = "https://twitter.com/vicent_bdslab/"
     name = "fab fa-twitter"
     weight = 3
+[[menu.icon]]
+    url="https://www.goodreads.com/user/show/40572650-ravn"
+    name = "fas fa-book-reader"
+    weight = 4

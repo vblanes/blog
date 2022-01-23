@@ -2,6 +2,7 @@
 title: "Migración del blog a Hugo y como publicarlo en github pages"
 date: 2022-01-16T17:08:44+01:00
 draft: true
+tags: ['hugo', 'markdown', 'blog']
 ---
 
 # Introdución

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on S.S. Aleph</title>
+    <link>https://vblanes.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on S.S. Aleph</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 16 Jan 2022 17:08:44 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migración del blog a Hugo y como publicarlo en github pages</title>
+      <link>https://vblanes.github.io/posts/hugo/</link>
+      <pubDate>Sun, 16 Jan 2022 17:08:44 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/hugo/</guid>
+      <description>Introdución En este post voy a cubrir mi expericia utilizando Hugo (https://gohugo.io/) y a incluir los pasos básicos para crear un sitio web y publicarlo en Github pages. Hugo es un framework para creación de páginas de web estáticas. Es decir, de entrada parece una opción genial para crear un blog. Yo lo conocía desde hacía tiempo, pero no sabía si valía la pena aprender a utilizarlo hasta que vi que Jacob Kaplan-Moss, uno de los creadors del framework web Django, lo utilizaba para su propio blog (https://jacobian.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,6 +5,88 @@
     <link>https://vblanes.github.io/tags/</link>
     <description>Recent content in Tags on S.S. Aleph</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>es</language><atom:link href="https://vblanes.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>es</language>
+    <lastBuildDate>Fri, 21 Jan 2022 20:54:51 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blockchain</title>
+      <link>https://vblanes.github.io/tags/blockchain/</link>
+      <pubDate>Fri, 21 Jan 2022 20:54:51 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://vblanes.github.io/tags/blog/</link>
+      <pubDate>Sun, 16 Jan 2022 17:08:44 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://vblanes.github.io/tags/hugo/</link>
+      <pubDate>Sun, 16 Jan 2022 17:08:44 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://vblanes.github.io/tags/markdown/</link>
+      <pubDate>Sun, 16 Jan 2022 17:08:44 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contraseñas</title>
+      <link>https://vblanes.github.io/tags/contrase%C3%B1as/</link>
+      <pubDate>Sat, 24 Apr 2021 20:20:07 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/contrase%C3%B1as/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gpg</title>
+      <link>https://vblanes.github.io/tags/gpg/</link>
+      <pubDate>Sat, 24 Apr 2021 20:20:07 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>passwords</title>
+      <link>https://vblanes.github.io/tags/passwords/</link>
+      <pubDate>Sat, 24 Apr 2021 20:20:07 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/passwords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>django</title>
+      <link>https://vblanes.github.io/tags/django/</link>
+      <pubDate>Sat, 17 Apr 2021 18:25:38 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forms</title>
+      <link>https://vblanes.github.io/tags/forms/</link>
+      <pubDate>Sat, 17 Apr 2021 18:25:38 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/tags/forms/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -2,13 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vblanes.github.io/posts/hugo/</loc>
-    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+    <loc>https://vblanes.github.io/tags/blockchain/</loc>
+    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/posts/blockchainbad/</loc>
+    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/posts/</loc>
-    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/</loc>
+    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/</loc>
+    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/blog/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/hugo/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/markdown/</loc>
+    <lastmod>2022-01-16T17:08:44+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/posts/hugo/</loc>
     <lastmod>2022-01-16T17:08:44+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/~issou/</loc>
@@ -20,14 +38,27 @@
     <loc>https://vblanes.github.io/about/</loc>
     <lastmod>2022-01-15T18:39:59+01:00</lastmod>
   </url><url>
+    <loc>https://vblanes.github.io/tags/contrase%C3%B1as/</loc>
+    <lastmod>2021-04-24T20:20:07+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/gpg/</loc>
+    <lastmod>2021-04-24T20:20:07+01:00</lastmod>
+  </url><url>
     <loc>https://vblanes.github.io/posts/gpg/</loc>
+    <lastmod>2021-04-24T20:20:07+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/passwords/</loc>
     <lastmod>2021-04-24T20:20:07+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/posts/dynamicform/</loc>
     <lastmod>2021-04-17T18:25:38+01:00</lastmod>
   </url><url>
-    <loc>https://vblanes.github.io/categories/</loc>
+    <loc>https://vblanes.github.io/tags/django/</loc>
+    <lastmod>2021-04-17T18:25:38+01:00</lastmod>
   </url><url>
-    <loc>https://vblanes.github.io/tags/</loc>
+    <loc>https://vblanes.github.io/tags/forms/</loc>
+    <lastmod>2021-04-17T18:25:38+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/categories/</loc>
   </url>
 </urlset>
