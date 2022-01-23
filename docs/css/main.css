@@ -139,8 +139,8 @@ img[src$='smallfigure']
 
 img[src$='smaller']
 {
-    width: 50%;
-    height: 50%;
+    width: 65%;
+    height: 65%;
     display: block;
     margin: 0.7rem auto;
 }
