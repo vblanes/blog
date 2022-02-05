@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mlops on S.S. Aleph</title>
+    <link>https://vblanes.github.io/tags/mlops/</link>
+    <description>Recent content in mlops on S.S. Aleph</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 05 Feb 2022 15:23:09 +0100</lastBuildDate><atom:link href="https://vblanes.github.io/tags/mlops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breachmen</title>
+      <link>https://vblanes.github.io/posts/breachmen/</link>
+      <pubDate>Sat, 05 Feb 2022 15:23:09 +0100</pubDate>
+      
+      <guid>https://vblanes.github.io/posts/breachmen/</guid>
+      <description>Breachmen Como humanos nos gusta poner etiquetas, y nombres, a todo. Supongo que es un mecanismo para poder entender cosas que están fuera de nuestro conocimiento, moviéndolas al sesgo de algo que si está dentro de nuestras capacidades, no me citéis en esto que de antropología y psicología no tengo ni idea, es solo una intuición. De la misma forma, nos gusta fliparnos, e inventarnos título que poder lucir como medalla social, además si el título es en inglés y suena bien, mejor.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,7 +2,7 @@
 title: "Blockchain no vale para nada"
 date: 2022-01-21T20:54:51+01:00
 draft: true
-tags: ["blockchain"]
+tags: ["blockchain", "opinión"]
 ---
 
 # Introducción

@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://vblanes.github.io/posts/breachmen/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/devops/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/mlops/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/opini%C3%B3n/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/posts/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
+    <loc>https://vblanes.github.io/tags/trabajo/</loc>
+    <lastmod>2022-02-05T15:23:09+01:00</lastmod>
+  </url><url>
     <loc>https://vblanes.github.io/tags/blockchain/</loc>
     <lastmod>2022-01-21T20:54:51+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/posts/blockchainbad/</loc>
-    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
-  </url><url>
-    <loc>https://vblanes.github.io/posts/</loc>
-    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
-  </url><url>
-    <loc>https://vblanes.github.io/</loc>
-    <lastmod>2022-01-21T20:54:51+01:00</lastmod>
-  </url><url>
-    <loc>https://vblanes.github.io/tags/</loc>
     <lastmod>2022-01-21T20:54:51+01:00</lastmod>
   </url><url>
     <loc>https://vblanes.github.io/tags/blog/</loc>
