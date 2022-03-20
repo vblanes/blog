@@ -1,0 +1,51 @@
+<div id="contador">
+    <script type="text/javascript">
+        var DateDiff = {
+ 
+            inDays: function(d1, d2) {
+                var t2 = d2.getTime();
+                var t1 = d1.getTime();
+
+                return Math.floor((t2-t1)/(24*3600*1000));
+            },
+
+            inWeeks: function(d1, d2) {
+                var t2 = d2.getTime();
+                var t1 = d1.getTime();
+
+                return parseInt((t2-t1)/(24*3600*1000*7));
+            },
+
+            inMonths: function(d1, d2) {
+                var d1Y = d1.getFullYear();
+                var d2Y = d2.getFullYear();
+                var d1M = d1.getMonth();
+                var d2M = d2.getMonth();
+
+                return (d2M+12*d2Y)-(d1M+12*d1Y);
+            },
+
+            inYears: function(d1, d2) {
+                return d2.getFullYear()-d1.getFullYear();
+            }
+
+
+        
+        }
+
+        var dString = "Jul, 01, 2020";
+
+        var d1 = new Date(dString);
+        var d2 = new Date();
+
+        var total_days = DateDiff.inDays(d1, d2)
+
+        document.write("<h1>Total dias: "+total_days+"</h1>")
+        var years = Math.floor(total_days/365)
+        total_days = total_days - (years*365)
+        var months = Math.floor(total_days/30)
+        total_days = total_days - (months*30)
+
+        document.write("<h2> Approx: "+ total_days +" dias, " + months + " meses y " + years + " años</h2>")
+    </script>
+</div>

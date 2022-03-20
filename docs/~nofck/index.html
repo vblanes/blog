@@ -5,7 +5,7 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mlops</title>
+        <title>No Fuck Counter</title>
         
         <style>
 
@@ -70,9 +70,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.93.2" />
         
-            <link href="/tags/mlops/index.xml" rel="alternate" type="application/rss&#43;xml" title="S.S. Aleph" />
-            <link href="/tags/mlops/index.xml" rel="feed" type="application/rss&#43;xml" title="S.S. Aleph" />
-        
 
         
 
@@ -90,7 +87,7 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#">mlops</a>
+                    <a class="navbar-brand visible-xs" href="#">No Fuck Counter</a>
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -131,36 +128,67 @@
 
 <main>
 
-    <h2>mlops</h2>
+    <div>
+        <h2>No Fuck Counter</h2>
+        <h5></h5>
+        
 
-     <div class="item">
+    </div>
 
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/posts/breachmen/">Breachmen</a></h4>
-    <h5>February 5, 2022</h5>
-    
-<a href="https://vblanes.github.io/tags/devops"><kbd class="item-tag">devops</kbd></a>
-
-<a href="https://vblanes.github.io/tags/mlops"><kbd class="item-tag">mlops</kbd></a>
-
-<a href="https://vblanes.github.io/tags/trabajo"><kbd class="item-tag">trabajo</kbd></a>
-
-<a href="https://vblanes.github.io/tags/opini%C3%B3n"><kbd class="item-tag">opinión</kbd></a>
-
-
-
-</div>
+    <div align="start" class="content"><div id="contador">
+    <script type="text/javascript">
+        var DateDiff = {
  
+            inDays: function(d1, d2) {
+                var t2 = d2.getTime();
+                var t1 = d1.getTime();
+
+                return Math.floor((t2-t1)/(24*3600*1000));
+            },
+
+            inWeeks: function(d1, d2) {
+                var t2 = d2.getTime();
+                var t1 = d1.getTime();
+
+                return parseInt((t2-t1)/(24*3600*1000*7));
+            },
+
+            inMonths: function(d1, d2) {
+                var d1Y = d1.getFullYear();
+                var d2Y = d2.getFullYear();
+                var d1M = d1.getMonth();
+                var d2M = d2.getMonth();
+
+                return (d2M+12*d2Y)-(d1M+12*d1Y);
+            },
+
+            inYears: function(d1, d2) {
+                return d2.getFullYear()-d1.getFullYear();
+            }
+
+
+        
+        }
+
+        var dString = "Jul, 01, 2020";
+
+        var d1 = new Date(dString);
+        var d2 = new Date();
+
+        var total_days = DateDiff.inDays(d1, d2)
+
+        document.write("<h1>Total dias: "+total_days+"</h1>")
+        var years = Math.floor(total_days/365)
+        total_days = total_days - (years*365)
+        var months = Math.floor(total_days/30)
+        total_days = total_days - (months*30)
+
+        document.write("<h2> Approx: "+ total_days +" dias, " + months + " meses y " + years + " años</h2>")
+    </script>
+</div>
+</div>
 
 </main>
-
-
 
         <footer>
             <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
