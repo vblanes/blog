@@ -14,4 +14,4 @@ Julio 2022
 Septiembre 2022
 
 ## Cartel de defensa de la tesis (modelo provisional) por [Naira F. Cantero](https://naiarafcantero.com/)
-![Imagen provision del cartel](/img/provisional.jpeg) 
+![Imagen provision del cartel](/img/provisional_thesis.jpeg) 
