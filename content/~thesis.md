@@ -14,4 +14,4 @@ draft: true
 #### Octubre 2022
 
 ## Cartel de defensa de la tesis (modelo provisional) por [Naiara F. Cantero](https://naiarafcantero.com/)
-![Imagen provision del cartel](/img/provisional_thesis.jpeg) 
+![Imagen provision del cartel](/img/provisional_thesis.jpg) 
