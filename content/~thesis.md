@@ -4,14 +4,14 @@ date: 2022-05-15T17:52:01+02:00
 draft: true
 ---
 ### **Título**
-Palliative Care Referral: A Machine Learning Approach
+### Clinical Decision Support Systems for Palliative Care Referral
 ### **Directores**
-Juan M. García Gómez & Ascensión Doñate-Martínez
+### Juan M. García Gómez & Ascensión Doñate-Martínez
 
 #### **Fecha prevista depósito**
-Julio 2022
+#### Septiembre 2022
 #### **Fecha prevista defensa**
-Septiembre 2022
+#### Octubre 2022
 
 ## Cartel de defensa de la tesis (modelo provisional) por [Naiara F. Cantero](https://naiarafcantero.com/)
 ![Imagen provision del cartel](/img/provisional_thesis.jpeg) 
