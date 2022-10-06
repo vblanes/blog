@@ -18,3 +18,4 @@ Aquí voy a incluir diferents enlaces a otros blogs o páginas webs que me parec
 1. [Ethical anti-design](https://njms.ca/posts/ethical-anti-design.html)
 2. [The Revenge of the Hot Water Bottle](https://www.lowtechmagazine.com/2022/01/the-revenge-of-the-hot-water-bottle.html)
 3. [Los táperes son los que hacen que España funcione](https://www.elconfidencial.com/cultura/2022-01-23/tuppers-restaurantes-espana-funciona_3361758/)
+4. [Let websites framebust out of native apps](https://www.holovaty.com/writing/framebust-native-apps/)

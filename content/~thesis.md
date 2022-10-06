@@ -11,7 +11,7 @@ draft: true
 # **Fecha prevista depósito**
 ### Septiembre 2022
 # **Fecha prevista defensa**
-### Octubre/Noviembre 2022
+### 21 de Noviembre de 2022
 
 ## Descargar versión pre-evaluadores externos: [thesis.pdf](/thesis.pdf)
 
