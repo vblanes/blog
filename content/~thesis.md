@@ -8,10 +8,10 @@ draft: true
 # **Directores**
 ### Juan M. García Gómez & Ascensión Doñate-Martínez
 
-# **Fecha prevista depósito**
-### Septiembre 2022
+# **Fecha depósito**
+### 2 de Noviembre de 2022
 # **Fecha prevista defensa**
-### 21 de Noviembre de 2022
+### December 2022
 
 ## Descargar versión pre-evaluadores externos: [thesis.pdf](/thesis.pdf)
 
