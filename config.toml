@@ -58,3 +58,8 @@ publishDir = "docs"
     url="https://www.goodreads.com/user/show/40572650-ravn"
     name = "fas fa-book-reader"
     weight = 4
+
+[[menu.icon]]
+    url = "https://xarxa.cloud/web/@ravn"
+    name = "fas fa-hippo"
+    weight = 5
