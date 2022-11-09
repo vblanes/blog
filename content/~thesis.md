@@ -13,7 +13,7 @@ draft: true
 # **Fecha prevista defensa**
 ### 24 de Noviembre de 2022
 
-## Descargar versión pre-evaluadores externos: [thesis.pdf](/thesis.pdf)
+## Descargar versión depósito: [thesis.pdf](/thesis.pdf)
 
 ## Cartel de defensa de la tesis (sin fecha final) por [Naira F. Cantero](https://naiarafcantero.com/)
 ![Imagen provision del cartel](/img/thesis.png) 
