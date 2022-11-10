@@ -40,6 +40,7 @@ img {
 
 .content {
     padding-top: 20px;
+    text-align: left;
 }
 
 /* Profile picture */
@@ -105,4 +106,41 @@ a:hover {
 
 footer {
     border-bottom: var(--border-width) solid var(--accent);
+}
+
+img[src$='#center']
+{
+    display: block;
+    margin: 0.7rem auto; /* you can replace the vertical '0.7rem' by
+                            whatever floats your boat, but keep the
+                            horizontal 'auto' for this to work */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatleft']
+{
+    float:left;
+    margin: 0.7rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatright']
+{
+    float:right;
+    margin: 0.7rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='smallfigure']
+{
+    width: 80%;
+    height: 80%; 
+}
+
+img[src$='smaller']
+{
+    width: 65%;
+    height: 65%;
+    display: block;
+    margin: 0.7rem auto;
 }
