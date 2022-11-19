@@ -60,6 +60,7 @@ publishDir = "docs"
     weight = 4
 
 [[menu.icon]]
-    url = "https://xarxa.cloud/web/@ravn"
+    url = "https://xarxa.cloud/@ravn"
+    rel = "me"
     name = "fas fa-hippo"
     weight = 5
