@@ -1,5 +1,5 @@
 ---
-title: "Actualización tesis"
+title: "Tesis doctoral"
 date: 2022-05-15T17:52:01+02:00
 draft: true
 ---
@@ -13,7 +13,13 @@ draft: true
 # **Fecha defensa**
 ### 24 de Noviembre de 2022
 
-## Descargar versión depósito: [thesis.pdf](/thesis.pdf)
+# **Calificación**
+### **Excelente - Cum laude**
+
+---
+___
+
+## Descargar versión final: [thesis.pdf](/thesis.pdf)
 
 ## Cartel de defensa de la tesis por [Naira F. Cantero](https://naiarafcantero.com/)
 ![Imagen provision del cartel](/img/thesis.png) 
