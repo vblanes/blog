@@ -11,6 +11,7 @@ Aquí voy a incluir diferents enlaces a otros blogs o páginas webs que me parec
 
 1. [Sqlite is not a toy database](https://antonz.org/sqlite-is-not-a-toy-database/)
 2. [Strict Python function parameters](https://sethmlarson.dev/blog/strict-python-function-parameters)
+3. [AWS and blockchain](https://www.tbray.org/ongoing/When/202x/2022/11/19/AWS-Blockchain)
 
 
 # Otros

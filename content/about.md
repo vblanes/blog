@@ -6,7 +6,7 @@ draft: true
 
 # Vicent Blanes-Selva
 
-[Doctor](../~thesis) en tecnologías de la salud y el bienestar en la Universitat Politècnica de València, especializado en Machine Learning aplicado a medicina y programador, sobretodo programador.
+[Doctor en tecnologías de la salud y el bienestar](../~thesis) por la Universitat Politècnica de València, especializado en Machine Learning aplicado a medicina y programador, sobretodo programador.
 
 Mi linea de investigación versa sobre la construcción de sistemas de ayuda a la decisión (CDSS), en el ámbito médico, sobretodo con el foco sobre los cuidados paliativos y la detección precoz de pacientes con necesidad de estos.
 
