@@ -64,3 +64,6 @@ publishDir = "docs"
     rel = "me"
     name = "fas fa-hippo"
     weight = 5
+
+[markup.goldmark.renderer]
+    unsafe = true

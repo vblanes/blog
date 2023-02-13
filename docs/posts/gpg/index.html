@@ -68,7 +68,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.105.0">
+ <meta name="generator" content="Hugo 0.110.0">
         
 
         
@@ -144,9 +144,9 @@
     </div>
 
     <div align="start" class="content"><h1 id="introducción">Introducción</h1>
-<p>Pass (<a href="https://www.passwordstore.org/"   target="_blank">https://www.passwordstore.org/</a>) es una utilidad de código libre para la gestión de contraseñas de manera sencilla. Pass sigue la filosofía unix, que es hacer una única cosa de la mejor manera posible. Pass es una utilidad escrita en Bash, el código contiene bashisms y por lo tanto no es compatible con otros shells como zsh, dash o fish, no obstante la inmensa mayoría de las distribuciones linux utilizan bash por defecto. La seguridad de pass utiliza como base el programa GNU Privacy Guard, conocido por su acrónimo GPG. A pesar de que Pass es muy sencillo y está pensado para un uso personal, se puede utilizar para compartir contraseñas en un equipo sin necesidad de usar una contraseña maestra común para todos. De hecho, es el método que utilizamos en mi equipo para la administración de sistemas. La siguiente guía está basada en un <a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592"   target="_blank">post de medium</a>, no obstante, por descuido o por estar enfocado a un público más experto, la guía ignora algunos pasos esenciales con GPG antes de poder utilizar Pass.</p>
+<p>Pass (<a href="https://www.passwordstore.org/">https://www.passwordstore.org/</a>) es una utilidad de código libre para la gestión de contraseñas de manera sencilla. Pass sigue la filosofía unix, que es hacer una única cosa de la mejor manera posible. Pass es una utilidad escrita en Bash, el código contiene bashisms y por lo tanto no es compatible con otros shells como zsh, dash o fish, no obstante la inmensa mayoría de las distribuciones linux utilizan bash por defecto. La seguridad de pass utiliza como base el programa GNU Privacy Guard, conocido por su acrónimo GPG. A pesar de que Pass es muy sencillo y está pensado para un uso personal, se puede utilizar para compartir contraseñas en un equipo sin necesidad de usar una contraseña maestra común para todos. De hecho, es el método que utilizamos en mi equipo para la administración de sistemas. La siguiente guía está basada en un <a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592">post de medium</a>, no obstante, por descuido o por estar enfocado a un público más experto, la guía ignora algunos pasos esenciales con GPG antes de poder utilizar Pass.</p>
 <h1 id="construir-un-par-de-claves-públicaprivada-con-gpg">Construir un par de claves pública/privada con GPG</h1>
-<p><em>Referencia:</em> <a href="https://www.gnupg.org/gph/en/manual/c14.html"   target="_blank">Manual GNU</a></p>
+<p><em>Referencia:</em> <a href="https://www.gnupg.org/gph/en/manual/c14.html">Manual GNU</a></p>
 <p>La idea de este paso es crear un par de claves, una pública y una privada. GPG requerirá un nombre, un correo (muy importante ponerlo correctamente) y una contraseña. Se pueden modificar las opciones para la creación del keypair, no obstante se recomienda la creación por defecto. Para más detalles sobre el algoritmo utilizado puede consultarse el link en la referencia.</p>
 <p>La contraseña que GPG pide es para encriptar de manera simétrica la clave privada y que no exista como un fichero de texto plano en nuestro sistema. Aunque todavía no hemos llegado a este punto, es importante saber que Pass encriptará nuestras contraseñas con nuestras claves públicas. De esa manera solo se podrán desencriptar con nuestra clave privada, que solo nosotros deberemos conocer.</p>
 <p><img src="/img/posts/gpg/gpg1.webp" alt=""></p>
@@ -210,7 +210,7 @@
 </main>
 
         <footer>
-            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io"   target="_blank">Hugo</a> and <a href="https://github.com/calintat/minimal"   target="_blank">Minimal</a>.</p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
         </footer>
 
         

@@ -68,7 +68,7 @@
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.105.0">
+ <meta name="generator" content="Hugo 0.110.0">
         
 
         
@@ -146,7 +146,7 @@
 <p>Cuando busqué como hacer esto, porque como posiblemente ya hayáis deducido soy un melón para el desarrollo web, me di cuenta de que no habían buenos recursos que explicaran justo lo que yo necesitaba. Así que hoy toca como crear un formulario dínamico en Django (+bootstrap)</p>
 <h1 id="antes-de-empezar">Antes de empezar</h1>
 <p>Este tutorial está pensado para gente con una experiencía mínima en Django, es decir, que haya trasteado un poco con las diferentes partes: las aplicaciones, la parte de URLs, los formularios, los modelos y el ORM&hellip;</p>
-<p>Si de todo esto no te suena ni papa te recomiendo empezar por el tutorial oficial de Django: <a href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/"   target="_blank">https://docs.djangoproject.com/en/3.2/intro/tutorial01/</a></p>
+<p>Si de todo esto no te suena ni papa te recomiendo empezar por el tutorial oficial de Django: <a href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/">https://docs.djangoproject.com/en/3.2/intro/tutorial01/</a></p>
 <h1 id="la-clase-form">La clase Form</h1>
 <p>Vamos a utilizar el método standard de Django para la creación de formularios. Basicamente la creación de una clase, preferiblemente en el fichero forms.py de la aplicación pertinente que herede de la clase Form.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>  <span style="color:#f92672">from</span> django <span style="color:#f92672">import</span> forms
@@ -196,34 +196,34 @@
 <p>Es importante destacar que en este ejemplo solo estábamos trabajando con variables numéricas (int y float). Si se tienen más tipos se deberá añadir nuevos bloques if con los distintos tipos y escribir el código necesario para gestionarlos (p.e. fechas o droplists con categoría). No obstante este es el esquema general básico y ampliable.</p>
 <h1 id="template">Template</h1>
 <p>Finalmente, cuando en él código de la vista creemos el formulario y se lo pasemos a la función render, el template html deberá contener el siguiente bloque:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">‍form</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;simple_dynamic_form&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>‍form lang=&#34;en&#34; id=&#34;simple_dynamic_form&#34;&gt;
 </span></span><span style="display:flex;"><span>    {% csrf_token %}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;row&#34;&gt;
 </span></span><span style="display:flex;"><span>            {% for field in fields %}
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-sm-12 col-md-4 work-item&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-12&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis center d-flex justify-content-center&#34;</span> <span style="color:#a6e22e">data-toggle</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tooltip&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                        &lt;<span style="color:#f92672">‍span</span>&gt;{{ field.label | safe }}&lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">span</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-12&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ellipsis center d-flex justify-content-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;col-sm-12 col-md-4 work-item&#34;&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;col-12&#34;&gt;
+</span></span><span style="display:flex;"><span>                    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;ellipsis center d-flex justify-content-center&#34; data-toggle=&#34;tooltip&#34;&gt;
+</span></span><span style="display:flex;"><span>                        <span style="color:#960050;background-color:#1e0010">&lt;</span>‍span&gt;{{ field.label | safe }}<span style="color:#960050;background-color:#1e0010">&lt;</span>‍/span&gt;
+</span></span><span style="display:flex;"><span>                    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;col-12&#34;&gt;
+</span></span><span style="display:flex;"><span>                    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;ellipsis center d-flex justify-content-center&#34;&gt;
 </span></span><span style="display:flex;"><span>                        {{ field | safe }}
-</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
-</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
+</span></span><span style="display:flex;"><span>                    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>            {% endfor %}
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">‍div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-12 center mt-2&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">‍input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnResults&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-outline-dark&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Calculate&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">div</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍div class=&#34;col-12 center mt-2&#34; align=&#34;center&#34;&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&lt;</span>‍input id=&#34;btnResults&#34; class=&#34;btn btn-outline-dark&#34; type=&#34;submit&#34; value=&#34;Calculate&#34;&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span>‍/div&gt;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">‍</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">form</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;</span>‍/form&gt;
 </span></span></code></pre></div><p>Nótese que pasamos el formulario a este template bajo el nombre <code>fields</code> y que utilizamos los templates de django para recorrer cada uno y renderizarlo. Un aspecto tremendamente importante es que utilizamos el sistema grid de bootstrap para pintar nuestros campos en un cuadrícula. Las clases <code>col-sm-12 col-md-4</code> nos indican que en condiciones de tamaño de ventana media o superior cada campo ocupará 4 de las 12 columnas, por lo que tendremos tres campos de por fila, mientras que cuando la pantalla sea pequeña, pasaremos a un campos por fila. En la siguientes figuras puede observarse las diferencias.</p>
 <p><img src="/img/posts/djangoform/3cols.webp" alt="3 cols form"></p>
 <p><img src="/img/posts/djangoform/1col.webp" alt="1 col form"></p>
@@ -274,7 +274,7 @@
 </main>
 
         <footer>
-            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io"   target="_blank">Hugo</a> and <a href="https://github.com/calintat/minimal"   target="_blank">Minimal</a>.</p>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
         </footer>
 
         
